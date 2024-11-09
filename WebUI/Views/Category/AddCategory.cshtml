@@ -1,0 +1,35 @@
+﻿@using Entities.Concrete
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-controller="Category" asp-action="AddCategoryMethod" method="POST">
+
+    <div class="formContainer">
+
+        <img class="imgPrvt" src="/image/add.png" style="margin-bottom: 23px;">
+
+
+        <select class="inputFormV2" name="categoryId" placeholder="Üst Kategori" required>
+
+            <option value="null">Ana Kategori</option>
+
+            @foreach (var item in (List<CategoryTableDto>)ViewData["categorys"])
+            {
+                <option value="@item.Id">@item.CategoryName</option>
+
+            }
+
+        </select>
+
+        
+        <input class="inputFormV2" name="name" placeholder="Kategori İsmi" required>
+
+
+        <button class="buttonPrvt" type="submit" style="margin-bottom: 25px;"> Add Category </button>
+
+    </div>
+
+</form>

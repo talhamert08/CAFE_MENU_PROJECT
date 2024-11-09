@@ -1,0 +1,36 @@
+﻿@using Entities.Concrete
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model PropertyTableDto
+
+<form asp-controller="Property" asp-action="UpdatePropertyMethod" method="POST">
+
+    <div class="formContainer">
+
+        <img class="imgPrvt" src="/image/system-update.png" style="margin-bottom: 23px;">
+
+        <div style="display: flex;">
+
+            <input class="inputForm" name="key" value="@Model.Key" placeholder="Özellik" required>
+
+            <input class="inputForm" name="value" value="@Model.Value" placeholder="Açıklama" required>
+
+        </div>
+
+        <button class="buttonPrvt" type="submit" style="margin-bottom: 25px;"> Update Property </button>
+
+    </div>
+
+    <input style="display:none" name="Id" value="@Model.Id" />
+
+    <input style="display:none" name="CreatedDate" value="@Model.CreatedDate" />
+
+    <input style="display:none" name="CreatorUserId" value="@Model.CreatorUserId" />
+
+    <input style="display:none" name="IsDeleted" value="@Model.IsDeleted" />
+
+</form>

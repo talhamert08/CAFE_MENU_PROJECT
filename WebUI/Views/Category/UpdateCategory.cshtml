@@ -1,0 +1,58 @@
+﻿@using Entities.Concrete
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CategoryTableDto
+
+<form asp-controller="Category" asp-action="UpdateCategoryMethod" method="POST">
+
+    <div class="formContainer">
+
+        <img class="imgPrvt" src="/image/system-update.png" style="margin-bottom: 23px;">
+
+
+        <select class="inputFormV2" name="ParentCategoryId" placeholder="Üst Kategori" required>
+
+            @if (Model.ParentCategoryId == null)
+            {
+                <option value="null" selected>Ana Kategori</option>
+            }
+            else
+            {
+                <option value="null" selected>Ana Kategori</option>
+            }
+
+
+            @foreach (var item in (List<CategoryTableDto>)ViewData["categorysForUpd"])
+            {
+                @if (item.Id == Model.ParentCategoryId)
+                {
+                    <option value="@item.Id" selected>@item.CategoryName</option>
+                }
+                else
+                {
+                    <option value="@item.Id">@item.CategoryName</option>
+                }
+
+
+            }
+
+        </select>
+
+
+        <input class="inputFormV2" name="CategoryName" value="@Model.CategoryName" placeholder="Kategori İsmi" required>
+
+
+        <button class="buttonPrvt" type="submit" style="margin-bottom: 25px;"> Update Category </button>
+
+    </div>
+    <input style="display:none" name="Id" value="@Model.Id" />
+
+    <input style="display:none" name="CreatedDate" value="@Model.CreatedDate" />
+
+    <input style="display:none" name="CreatorUserId" value="@Model.CreatorUserId" />
+
+    <input style="display:none" name="IsDeleted" value="@Model.IsDeleted" />
+</form>

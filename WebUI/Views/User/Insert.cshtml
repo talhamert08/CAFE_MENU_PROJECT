@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-controller="User" asp-action="InsertMethod" method="POST">
+
+    <div class="formContainer">
+
+        <img class="imgPrvt" src="/image/add.png" style="margin-bottom: 23px;">
+
+        <div style="display: flex;">
+
+            <input class="inputForm" name="name" placeholder="Name" required>
+
+            <input class="inputForm" name="surname" placeholder="Sur Name" required>
+
+        </div>
+
+        <input class="inputFormV2" name="password" type="password" placeholder="Pasword" required>
+
+        <center>
+
+        <div style="display: flex;margin-top: 15px;">
+
+            <input class="inputForm" name="username" placeholder="User Name" required>
+
+
+        </div>
+
+        </center>
+
+        <button class="buttonPrvt" type="submit" style="margin-bottom: 25px;"> Add User </button>
+
+    </div>
+
+</form>

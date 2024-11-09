@@ -1,0 +1,30 @@
+﻿@using Entities.Concrete
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Guid
+
+<form asp-controller="Product" asp-action="AddPropertyMethod" method="POST">
+
+    <div class="formContainer">
+
+        <img class="imgPrvt" src="/image/add.png" style="margin-bottom: 23px;">
+
+        <select class="inputFormV2" name="propertyId" placeholder="Description" required>
+
+            @foreach (var item in (List<PropertyTableDto>)ViewData["propertysForProduct"])
+            {
+                <option value="@item.Id">@item.Key</option>
+            }
+
+        </select>
+
+        <button class="buttonPrvt" type="submit" style="margin-bottom: 25px;"> Add Property </button>
+
+    </div>
+
+    <input style="display:none" name="id" value="@Model" />
+
+</form>

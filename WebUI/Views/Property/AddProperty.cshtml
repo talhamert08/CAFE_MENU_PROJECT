@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-controller="Property" asp-action="AddPropertyMethod" method="POST">
+
+    <div class="formContainer">
+
+        <img class="imgPrvt" src="/image/add.png" style="margin-bottom: 23px;">
+
+        <div style="display: flex;">
+
+            <input class="inputForm" name="key" placeholder="Özellik" required>
+
+            <input class="inputForm" name="value" placeholder="Açıklama" required>
+
+        </div>
+
+        <button class="buttonPrvt" type="submit" style="margin-bottom: 25px;"> Add Property </button>
+
+    </div>
+
+</form>

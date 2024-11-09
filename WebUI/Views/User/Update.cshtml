@@ -1,0 +1,48 @@
+﻿@using Entities.Concrete
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model UserTableDto
+
+<form asp-controller="User" asp-action="UpdateMethod" method="POST">
+
+    <div class="formContainer">
+
+        <img class="imgPrvt" src="/image/system-update.png" style="margin-bottom: 23px;">
+
+        <div style="display: flex;">
+
+            <input class="inputForm" name="Name" value="@Model.Name" placeholder="Name" required>
+
+            <input class="inputForm" name="SurName" value="@Model.SurName" placeholder="Sur Name" required>
+
+        </div>
+
+        <input class="inputFormV2" name="password" type="password" placeholder="Pasword" required>
+
+        <center>
+
+            <div style="display: flex;margin-top: 15px;">
+
+                <input class="inputForm" name="UserName" value="@Model.UserName" placeholder="User Name" required>
+
+
+            </div>
+
+        </center>
+
+        <button class="buttonPrvt" type="submit" style="margin-bottom: 25px;"> Update </button>
+
+    </div>
+
+    <input style="display:none" name="Id" value="@Model.Id" />
+
+    <input style="display:none" name="CreatedDate" value="@Model.CreatedDate" />
+
+    <input style="display:none" name="CreatorUserId" value="@Model.CreatorUserId" />
+
+    <input style="display:none" name="IsDeleted" value="@Model.IsDeleted" />
+
+</form>
