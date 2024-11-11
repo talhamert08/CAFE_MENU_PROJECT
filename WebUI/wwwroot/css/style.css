@@ -749,7 +749,7 @@ nav {
 }
 
     .updateButton:hover {
-        background-color: aqua; /* Hover sırasında aqua rengini aldı */
+        background-color: aquamarine; /* Hover sırasında aqua rengini aldı */
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hover sırasında gölgeyi artır */
     }
 
