@@ -738,7 +738,7 @@ nav {
     width: 49%;
     height: 35px; /* Yüksekliği biraz artırarak daha belirgin yap */
     border-radius: 12px; /* Köşeleri daha yumuşak yap */
-    background-color: #FAC218; /* Modern bir turuncu tonu */
+    background-color: blue; /* Modern bir mavi tonu */
     border: none;
     color: white; /* Yazı rengi */
     font-size: 16px; /* Yazı boyutu */
@@ -749,7 +749,7 @@ nav {
 }
 
     .updateButton:hover {
-        background-color: #FF7A29; /* Hover sırasında daha koyu bir turuncu */
+        background-color: aqua; /* Hover sırasında aqua rengini aldı */
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hover sırasında gölgeyi artır */
     }
 
