@@ -2,20 +2,23 @@ using AutoMapper;
 using Business.Services;
 using Core.DataAccess;
 using DataAccess.Concrete.SQL_EntityFrameWork;
+using DryIoc;
+using DryIoc.ImTools;
 using Entities.Concrete;
-using Microsoft.AspNetCore.Http;
 using Moq;
 
-namespace UnitTest
+namespace NUnitTest
 {
+
     public class CategoryTableManagerTests
     {
-        private readonly Mock<ICategoryTableDal> _mockDal;
-        private readonly Mock<IMapper> _mockMapper;
-        private readonly CategoryTableManager _categoryTableManager;
+        private Mock<ICategoryTableDal> _mockDal;
+        private Mock<IMapper> _mockMapper;
+        private CategoryTableManager _categoryTableManager;
 
         // Test öncesi baðýmlýlýklarý oluþturuyoruz
-        public CategoryTableManagerTests()
+        [SetUp]
+        public void Setup()
         {
             _mockDal = new Mock<ICategoryTableDal>();
             _mockMapper = new Mock<IMapper>();
@@ -24,12 +27,11 @@ namespace UnitTest
             _categoryTableManager = new CategoryTableManager(_mockDal.Object, _mockMapper.Object);
         }
 
-        [Fact]
-        public async void CategoryTableGetListTest()
+        [Test]
+        public async Task CategoryTableGetListTestNUnit()
         {
             await _categoryTableManager.GetListAsync();
         }
-
     }
 
 }
